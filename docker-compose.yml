@@ -13,7 +13,7 @@ services:
         depends_on:
             - redis
         networks:
-            - laravel-9
+            - laravel-tdd
 
     nginx:
         image: nginx:alpine
@@ -24,7 +24,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks: 
-            - laravel-9
+            - laravel-tdd
     
     postgresql11:
         image: postgres:11.7
@@ -36,12 +36,13 @@ services:
             POSTGRES_USER: ${DB_USERNAME}
             PGDATA: ${PG_DATA}
         volumes:
-            - postgres:/data/postgres
-            - pg-data:/var/lib/postgresql/data
+            - ./.docker/pg-data:/var/lib/postgresql
+            # - postgres:/data/postgres
+            # - pg-data:/var/lib/postgresql/data
         ports:
             - "5441:5432"
         networks:
-            - laravel-9
+            - laravel-tdd
 
     queue:
         image: especializati/laravel9-app
@@ -53,17 +54,17 @@ services:
             - redis
             - app
         networks:
-            - laravel-9
+            - laravel-tdd
 
     redis:
         image: redis:latest
         networks:
-            - laravel-9
+            - laravel-tdd
 
 volumes:
     postgres:
     pg-data:
 
 networks:
-    laravel-9:
+    laravel-tdd:
         driver: bridge
