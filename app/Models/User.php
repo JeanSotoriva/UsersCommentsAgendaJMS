@@ -40,11 +40,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'id' => 'string',
     ];
+
+    public $incrementing = false;
 
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
+
 
 }

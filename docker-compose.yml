@@ -36,9 +36,9 @@ services:
             POSTGRES_USER: ${DB_USERNAME}
             PGDATA: ${PG_DATA}
         volumes:
-            - ./.docker/pg-data:/var/lib/postgresql
-            # - postgres:/data/postgres
+            - postgres:/data/postgres
             # - pg-data:/var/lib/postgresql/data
+
         ports:
             - "5441:5432"
         networks:
