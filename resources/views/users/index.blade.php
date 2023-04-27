@@ -3,6 +3,7 @@
 @section('title', 'Listagem do Usuário')
 
 @section('content')
+    @include('users/_partials/alerts')
     <div class="text-2x1 font-semibold leading-tigh py-2 px-3" style="font-size:150%">
         Listagem dos usuarios
         <strong style="float: right">

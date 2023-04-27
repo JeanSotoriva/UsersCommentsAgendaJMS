@@ -48,7 +48,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
         $this->model->create($data);
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess('success');
     }
 
     public function edit($id){
