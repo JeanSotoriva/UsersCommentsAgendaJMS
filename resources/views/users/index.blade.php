@@ -6,7 +6,7 @@
     <div class="text-2x1 font-semibold leading-tigh py-2 px-3" style="font-size:150%">
         Listagem dos usuarios
         <strong style="float: right">
-            <a href="{{ route('users.create') }}" class="rounded-full bg-purple-500 hover:bg-purple-700 text-white font-bold py-0 px-4"> + </a>
+            <a id="createUser" href="{{ route('users.create') }}" class="rounded-full bg-purple-500 hover:bg-purple-700 text-white font-bold py-0 px-4"> + </a>
         </strong>
     </div>
     <div class="focus:shadow-outline focus:outline-none py-2 px-3">
