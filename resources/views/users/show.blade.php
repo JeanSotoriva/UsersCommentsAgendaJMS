@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Listagem do Usuário')
+@section('title', 'Detalhes do Usuário')
 
 @section('content')
     <div class="w-full bg-white rounded px-5 py-0">
@@ -33,7 +33,7 @@
                             {{ $user->email }}
                         </td>
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <button type="submit" class="rounded-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4">Deletar</button>
+                            <button name="deletar" type="submit" class="rounded-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4">Deletar</button>
                         </td>
                     </tr>
                 </form>

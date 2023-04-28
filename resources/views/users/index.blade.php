@@ -7,7 +7,7 @@
     <div class="text-2x1 font-semibold leading-tigh py-2 px-3" style="font-size:150%">
         Listagem dos usuarios
         <strong style="float: right">
-            <a id="createUser" href="{{ route('users.create') }}" class="rounded-full bg-purple-500 hover:bg-purple-700 text-white font-bold py-0 px-4"> + </a>
+            <a name="createUser" href="{{ route('users.create') }}" class="rounded-full bg-purple-500 hover:bg-purple-700 text-white font-bold py-0 px-4"> + </a>
         </strong>
     </div>
     <div class="focus:shadow-outline focus:outline-none py-2 px-3">
@@ -38,13 +38,13 @@
                         {{ $user->email }}
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <a href="{{route('users.edit', $user->id)}}" class="bg-green-200 rounded-full py-2 px-6">editar
+                        <a id="editUser" href="{{route('users.edit', $user->id)}}" class="bg-green-200 rounded-full py-2 px-6">editar
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <a href="{{route('users.show', $user->id)}}" class="bg-orange-200 rounded-full py-2 px-6">detalhes</a>
+                        <a id="detailUser" href="{{route('users.show', $user->id)}}" class="bg-orange-200 rounded-full py-2 px-6">detalhes</a>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <a href="{{route('comments.index', $user->id)}}" class="bg-blue-200 rounded-full py-2 px-6">anotações</a>
+                        <a id="commentUser" href="{{route('comments.index', $user->id)}}" class="bg-blue-200 rounded-full py-2 px-6">anotações</a>
                     </td>
                 </tr>
             @endforeach

@@ -1,6 +1,5 @@
 # *** Settings ***
 # Resource        ../home/home.robot
-# Resource        ./CriarUsuario.robot
 # Library           FakerLibrary
 
 # Test Setup      Inicia sessão 
@@ -8,9 +7,7 @@
 
 
 # *** Variables ***
-# ${nome2} =       Get Variable Value      ${name}
-# ${email2} =      Get Variable Value      ${email}
-
+# # --
 
 # *** Keywords ***  
 # # --
@@ -22,9 +19,9 @@
 #     Title Should Be                     Listagem do Usuário
 #     Click Link                          id=editUser
 #     ${NomeFake}                         FakerLibrary.Name
-#     Input Text                          name=name               ${e-mail}
+#     Input Text                          name=name               ${NomeFake}
 #     ${EmailFake}                        FakerLibrary.Email
-#     Input Text                          name=email              ${nome}
+#     Input Text                          name=email              ${EmailFake}
 #     ${PasswordFake}                     FakerLibrary.Password
 #     Input Text                          name=password           ${PasswordFake}
 #     Click Button                        name=enviar
