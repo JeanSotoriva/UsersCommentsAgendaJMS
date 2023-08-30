@@ -41,7 +41,11 @@
                         <a href="{{ route('comments.edit', ['user' => $user->id, 'id' => $comment->id ]) }}" class="rounded-full bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-5">editar</a>
                     </td>
                     <td class="px-5 py-5 border-b border-red-200 bg-white text-sm">
-                        <a href="{{ route('comments.delete', ['comment' => $user->id, 'id' => $comment->id ]) }}" class="rounded-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-5" method="delete">Excluir</a>
+                        <form action="{{ route('comments.delete', ['user' => $user->id, 'id' => $comment->id]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="rounded-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-5">Excluir</button>
+                        </form>
                     </td>    
                 </tr>
             @endforeach

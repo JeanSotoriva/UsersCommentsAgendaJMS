@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Blade;
 
-Route::delete('/users/{comment}/comments/{id}', [CommentController::class, 'delete'])->name('comments.delete');
+Route::delete('/users/{user}/comments/{id}', [CommentController::class, 'delete'])->name('comments.delete');
 Route::put('/users/comments/{id}', [CommentController::class, 'update'])->name('comments.update');
 Route::get('/users/{id}/comments/create', [CommentController::class, 'create'])->name('comments.create');
 Route::get('/users/{user}/comments/{id}', [CommentController::class, 'edit'])->name('comments.edit');

@@ -66,12 +66,13 @@ class CommentController extends Controller
         return redirect()->route('comments.index', $comment->user_id);
     } 
 
-    public function delete($id){
-        if(!$comment = $this->comment->find($id)){
-            return redirect()->route('comments.index', $comment->user_id);
-        };
-        $comment->delete();
-        return redirect()->route('comments.index', $comment->user_id);
-    }  
+    public function delete($userId, $id){
+    $comment = $this->comment->find($id);
+    if(!$comment){
+        return redirect()->route('comments.index', $userId);
+    }
+    $comment->delete();
+    return redirect()->route('comments.index', $userId);
+}
 
 }
